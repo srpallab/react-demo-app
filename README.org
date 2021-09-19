@@ -1,6 +1,10 @@
 #+TITLE: Getting Started with Create React App
 
 * Scripts
+** ~npx create-react-app demo-app~
+   Creates a react app.
+** ~cd demo-app~
+   Moves to the react app folder.
 ** ~npm start~
    Runs the app in the development mode. Open [[http://localhost:3000]] to
    view it in the browser.
