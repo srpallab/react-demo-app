@@ -47,7 +47,21 @@
 
 * Six Main Concepts
 ** ~Jsx~
+   - replace ~class~ with ~className~
+   - for dynamic content no ~$~ sign is needed, only ~{}~.
+   - we can declare style object and set is as style value
+     #+BEGIN_EXAMPLE
+       const styleObject = {
+	 color: 'white',
+	 backgroundColor: 'black'
+       }
 
+       return(
+	 <div className="App">
+	   <p style={styleObject}>My Name is Khan</p>
+	 </div>
+       )
+     #+END_EXAMPLE
 ** Component
 
 ** Props
