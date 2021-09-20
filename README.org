@@ -103,10 +103,76 @@
 	   </div>
 	 );
        }
+     #+END_EXAMPLE
+** State and Event
+   - Simple State in React
+     #+BEGIN_EXAMPLE
+       import { useState } from 'react';
+
+       function App() {
+	 return (
+	   <div className="App">
+	     <Counter></Counter>
+	   </div>
+	 );
+       }
+
+       // My Component with State
+       function Counter() {
+	 // initilize state with useState
+	 // it takes one argument.
+	 const [count, setCount] = useState(0);
+	 // setCount sets the state
+	 const handleIncrease = () => setCount(count +	1);
+	 const handleDecrease = () => setCount(count -	1);
+	 return (
+	   <div>
+	     <h1>The Number is: {count} </h1>
+	     <button onClick={handleIncrease}>Increase</button>
+	     <button onClick={handleIncrease}>Decrease</button>
+	   </div>
+	 );
+       }
 
      #+END_EXAMPLE
-** Event
-
-** State
-
 ** Load Data
+   - Simple Load data from API
+     #+BEGIN_EXAMPLE
+       import './App.css';
+       import { useState, useEffect } from 'react';
+
+       function App() {
+	 return (
+	   <div className="App">
+	     <ExtarnalUsers></ExtarnalUsers>
+	   </div>
+	 );
+       }
+
+       function ExtarnalUsers(){
+	 const [users, setUsers] = useState([]);
+	 useEffect(() => {
+	   console.log("Inside");
+	   fetch('https://jsonplaceholder.typicode.com/users')
+	     .then(res => res.json())
+	     .then(data => setUsers(data));
+	 }, []);
+	 return (
+	   <div>
+	   {users.map(user => <User name={user.name} username={user.username} email={user.email}></User>)}
+	   </div>
+	 );
+       }
+
+       function User(props){
+	 return (
+	   <div>
+	     <h1>Name: {props.name}</h1>
+	     <p>Username: {props.username}</p>
+	     <p>Email: {props.email}</p>
+	   </div>
+	 );
+       }
+
+       export default App;
+     #+END_EXAMPLE
