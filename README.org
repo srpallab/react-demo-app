@@ -63,9 +63,48 @@
        )
      #+END_EXAMPLE
 ** Component
+   - Simple Component Declare
+     #+BEGIN_EXAMPLE
+       function App() {
+	 return (
+	   <div className="App">
+	     <Friend></Friend>
+	     <Friend></Friend>
+	   </div>
+	 );
+       }
 
+       // My Component
+       function Friend() {
+	 return (
+	   <div>
+	     <h1> My Name is Khan! </h1>
+	   </div>
+	 );
+       }
+     #+END_EXAMPLE
 ** Props
+   - Simple Props 
+     #+BEGIN_EXAMPLE
+       function App() {
+	 return (
+	   <div className="App">
+	     <Friend name='khan'></Friend>
+	     <Friend name='srp'></Friend>
+	   </div>
+	 );
+       }
 
+       // My Component
+       function Friend(props) {
+	 return (
+	   <div>
+	     <h1> My Name is {props.name}! </h1>
+	   </div>
+	 );
+       }
+
+     #+END_EXAMPLE
 ** Event
 
 ** State
